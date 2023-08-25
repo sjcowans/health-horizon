@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>User Profile: {{ userprofile.user.username }}</h2> 
+  <p>Age: {{ userprofile.age }}</p>
+  <p>Sex: {{ userprofile.get_sex_display }}</p>
+  <p>Height: {{ userprofile.height }} cm</p>
+  <p><a href="{% url 'userprofile_update' userprofile.pk %}">Edit Profile</a></p>
+{% endblock %}
