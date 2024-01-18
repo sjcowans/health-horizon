@@ -1,14 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Welcome to Health Horizon!</h1>
-    <p>
-        {% if user.is_authenticated %}
-            Hello, {{ user.username }}! 
-            <a href="{% url 'userprofile_logout' %}">Logout</a>
-        {% else %}
-            <a href="{% url 'userprofile_create' %}">Register</a> or 
-            <a href="{% url 'userprofile_login' %}">Login</a>
-        {% endif %}
-    </p>
+<div class="container mt-5 fade-in">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center welcome-container">
+            <h1>Welcome to Health Horizon!</h1>
+            
+            <p class="description mt-3">
+                At Health Horizon, we harness the power of data science to offer you a glimpse into your future well-being. By analyzing various health metrics, our state-of-the-art predictive app can provide insights into your wellness trajectory. Make informed decisions and steer your health in the direction you want, starting today.
+            </p>
+
+            <hr class="my-4">  <!-- Horizontal line for visual break -->
+
+            <p class="lead user-greeting">
+                {% if user.is_authenticated %}
+                    Hello, {{ user.username }}!
+                    <a href="{% url 'userprofile_logout' %}" class="btn btn-outline-danger ml-3">Logout</a>
+                {% else %}
+                    Ready to unveil your health's horizon?
+                    <a href="{% url 'userprofile_create' %}" class="btn btn-outline-primary ml-2">Register</a>
+                    <span class="mx-2">or</span>
+                    <a href="{% url 'userprofile_login' %}" class="btn btn-primary">Login</a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock %}

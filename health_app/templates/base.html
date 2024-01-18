@@ -1,20 +1,42 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Default Title{% endblock %}</title>
+    <title>{% block title %}HealthHorizon{% endblock %}</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block meta_description %}Default description for your site{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}default, keywords{% endblock %}">
+
     <!-- CSS libraries and stylesheets -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'health_horizon_theme.css' %}">
+
+    <!-- Custom Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+
     {% block additional_styles %}{% endblock %}
 </head>
 <body>
     <!-- Site-wide navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'home' %}">HealthHorizon</a>
-        <!-- Other navbar content -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="ml-auto">
+          <a href="#" class="logo-link">
+            <img src="{% static 'images/logo.png' %}" alt="HealthHorizon Logo" width="150" height="75">
+          </a>
+        </div>
     </nav>
-
     <!-- Main content block -->
     <main class="container mt-3">
         {% block content %}{% endblock %}
@@ -28,9 +50,11 @@
     </footer>
 
     <!-- JS libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'health_horizon.js' %}"></script>
     {% block additional_scripts %}{% endblock %}
 </body>
 </html>

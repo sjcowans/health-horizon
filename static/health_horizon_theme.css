@@ -1,0 +1,101 @@
+/* Global styles */
+body {
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(to right, #a8e063, #56ab2f); /* Fresh green gradient */
+  color: #333; /* Dark grey for good readability */
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  transition: color 0.3s ease; /* Smooth color transition */
+  color: #28a745; /* Bootstrap's green color */
+}
+
+a:hover {
+  color: #005a8d; /* Deep blue for hover state of links */
+}
+
+/* Header & Navbar styles */
+.navbar {
+  background-color: #003366; /* Darker blue for navbar */
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* A little shadow for depth */
+  margin-bottom: 5px;
+}
+
+.navbar-brand, .navbar a {
+  color: #ffffff !important; /* White color for navbar text */
+}
+
+/* Main content styles */
+main {
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparent white */
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  margin: 20px 15%;
+  padding-bottom: 70px;  /* adjust this value based on your footer's height */
+}
+
+/* Footer styles */
+footer {
+  background-color: #003366; /* Darker blue for footer */
+  color: #ffffff; /* White color for footer text */
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Buttons styling */
+.btn {
+  border-radius: 25px; /* Rounded edges */
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #28a745; /* Green for primary action */
+  border-color: #28a745;
+}
+
+.btn-primary:hover {
+  background-color: #218838; /* Darken color on hover */
+  border-color: #218838;
+}
+
+.btn-outline-primary {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.btn-outline-primary:hover {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s, transform 2s;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer p {
+  transform: translateX(-100%); 
+  transition: transform 0.5s;
+}
+
+.navbar-brand img {
+  padding-bottom: 10px; /* adjust as needed */
+  transform: translateX(-100%); /* Start position for slide-in animation */
+  transition: transform 1s ease-out; /* Animation configuration */
+}
+
+.logo-link img {
+  padding-bottom: 20px; /* Add more or less padding as required */
+}
